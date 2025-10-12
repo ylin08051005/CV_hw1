@@ -7,15 +7,15 @@ Use YOLOv8-based object detection system for group-housed swine with TTA (Test T
 ```
 
 hw1_111205039.zip
-|-- hw1_111205039
-|-------- report_111205039.pdf
-|-------- code_111205039.zip                     #Includes all complete source code, split datasets, training logs, and weight files.
-|-------- src/
-          ├── train.py                           # Basic training script
-          ├── train_improve.py                   # Improved training version()
-          └── tta_ensemble.py                    # Test Time Augmentation (TTA) and model ensemble for inference
-|-------- readme.md # Instructions for environment setup and execution
-└-------- requirements.txt # List of required packages
+ |-- hw1_111205039
+   |-------- report_111205039.pdf
+   |-------- code_111205039.zip                     #Includes all complete source code, split datasets, training logs, and weight files.
+      |-------- src/
+                ├── train.py                           # Basic training script
+                ├── train_improve.py                   # Improved training version()
+                └── tta_ensemble.py                    # Test Time Augmentation (TTA) and model ensemble for inference
+      |-------- readme.md # Instructions for environment setup and execution
+      └-------- requirements.txt # List of required packages
 
 ```
 
@@ -40,22 +40,38 @@ source venv/bin/activate  # Linux/Mac
 pip install -r requirements.txt
 ```
 
-## Dataset Preparation (Important)
 
-Ensure your dataset is organized as follows:
+---
+
+## 📁 Dataset Preparation (Important)
+
+Please **place the dataset inside the `src/` folder** before running the training or prediction scripts.
+After downloading the provided dataset, **rename and organize** the files into the following structure:
 
 ```
-.
-├── gt.txt                 # Format: img_id,x,y,width,height (one box per line)
-├── img/                   # Training images
-│   ├── 00000001.jpg
-│   ├── 00000002.jpg
-│   └── ...
-└── test_images/           # Test images for prediction
-    ├── 00000001.jpg
-    ├── 00000002.jpg
-    └── ...
+src/
+├── gt.txt                  # Ground truth annotations (format: img_id,x,y,width,height)
+├── img/                    # Training images
+│   ├── 00000001.jpg
+│   ├── 00000002.jpg
+│   └── ...
+└── test_images/            # Test images for prediction
+    ├── 00000001.jpg
+    ├── 00000002.jpg
+    └── ...
 ```
+
+### ⚠️ Notes
+
+* The **`gt.txt`**, **`img/`**, and **`test_images/`** folders **must** be placed under `src/`.
+* Make sure that the file names (`00000001.jpg`, etc.) match the annotation entries in `gt.txt`.
+* Do **not** include the dataset in your final submission ZIP — instead, describe where to download it (e.g., Google Drive or Kaggle link) in the **README**.
+
+
+---
+
+是否要我幫你整合成完整的 `README.md` 範本（包含環境設定、訓練與推論指令）？這樣你可以直接交。
+
 
 ### Dataset Structure of code_111205039
 
