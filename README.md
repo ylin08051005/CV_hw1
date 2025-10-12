@@ -6,7 +6,7 @@ Use YOLOv8-based object detection system for group-housed swine with TTA (Test T
 
 ```
 
-hw1_111205039.zip (e.g., hw1_R12345678.zip)
+hw1_111205039.zip
 |-- hw1_111205039
 |-------- report_111205039.pdf
 |-------- code_111205039.zip                     #Includes all complete source code, split datasets, training logs, and weight files.
@@ -40,7 +40,7 @@ source venv/bin/activate  # Linux/Mac
 pip install -r requirements.txt
 ```
 
-## Dataset Preparation
+## Dataset Preparation (Important)
 
 Ensure your dataset is organized as follows:
 
@@ -57,19 +57,12 @@ Ensure your dataset is organized as follows:
     └── ...
 ```
 
-### Training Dataset Structure
+### Dataset Structure of code_111205039
 
 ```
-hw1_111205039.zip
-└── hw1_111205039/
-    ├── report_111205039.pdf
-    ├── code_111205039.zip
-    └── src/
-        ├── train.py                 # Basic training script
-        ├── train_improve.py         # Improved training version
-        └── tta_ensemble.py          # Test Time Augmentation (TTA) and model ensemble for inference
-    ├── readme.md                # Instructions for environment setup and execution
-    └── requirements.txt         # List of required packages
+code_111205039.zip
+└── code_111205039/
+
 
     
 ```
