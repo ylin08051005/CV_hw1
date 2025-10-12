@@ -1,0 +1,6 @@
+names:
+- pig
+nc: 1
+path: /home/jupyter-neural-alpha/CV_test/yolo_dataset
+train: images/train
+val: images/val
