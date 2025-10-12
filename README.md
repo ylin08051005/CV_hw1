@@ -60,11 +60,38 @@ Ensure your dataset is organized as follows:
 ### Dataset Structure of code_111205039
 
 ```
-code_111205039.zip
-└── code_111205039/
+code_111205039/
+├── README.md                           # Instructions for environment setup and execution
+├── requirements.txt                    # List of required packages
+├── pig_detection/                       # Model 1 training output
+│   ├── exp/
+│   │   └── weights/
+│   │       ├── best.pt                 # Best checkpoint of Model 1
+│   │       └── last.pt                 # Last epoch checkpoint
+│   ├── results.png                      # Training metrics plot
+│   └── confusion_matrix.png             # Confusion matrix
+├── pig_detection_improved/              # Model 2 training output
+│   ├── exp/
+│   │   └── weights/
+│   │       └── best.pt                 # Best checkpoint of Model 2
+│   ├── results.png
+│   └── confusion_matrix.png
+├── train.py                             # Basic training script (Model 1)
+├── train_improve.py                      # Improved training script (Model 2)
+├── tta_ensemble.py                       # TTA + Ensemble prediction script
+├── img/                                  # Training images (if included)
+├── gt.txt                                # Ground truth annotations
+├── test_images/                          # Test images for prediction
+├── submission.csv                        # Baseline submission
+├── submission_improve.csv                # Improved model submission
+├── submission_tta_ensemble.csv           # TTA + Ensemble submission
+├── yolov8n.pt                            # YOLOv8n pretrained weights
+├── yolov8s.pt                            # YOLOv8s pretrained weights
+└── yolo_dataset/                        # YOLO-formatted dataset (already split into train & val)
+    ├── dataset.yaml
+    ├── images/                          # Includes split datasets (train and val data)
+    └── labels/                          # Includes split datasets (train and val data)
 
-
-    
 ```
 
 ### Test Dataset
